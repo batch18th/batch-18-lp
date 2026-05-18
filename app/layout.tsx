@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     template: "%s | SOM Meta Ads Expert"
   },
   description:
-    "Book a free 1:1 call and get a simple marketing plan for your business.",
+    "Book a free 1:1 digital marketing consultation call and get a customized plan to grow your business.",
   openGraph: {
-    title: "Get a Simple Marketing Plan for Your Business",
+    title: "Struggling to grow your business?",
     description:
-      "Book a free call and learn what to do next to get more inquiries, leads, and sales.",
+      "Grab a free 1:1 digital marketing consultation call and get a customized plan you can implement after the call.",
     url: "/",
     siteName: "SOM Digital",
     images: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get a Simple Marketing Plan for Your Business",
+    title: "Struggling to grow your business?",
     description:
-      "Book a free 1:1 call and get clear next steps for your marketing.",
+      "Book a free 1:1 digital marketing consultation call and get a clear growth plan.",
     images: ["/logo.png"]
   }
 };

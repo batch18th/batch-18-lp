@@ -1,21 +1,26 @@
-import { Clock3 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Urgency() {
   return (
-    <section className="bg-slate-50 px-5 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-4xl flex-col gap-4 rounded-lg border border-brand-200 bg-white p-6 shadow-soft sm:flex-row sm:items-center sm:p-8">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-brand-50 text-brand-700">
-          <Clock3 className="h-6 w-6" aria-hidden="true" />
-        </div>
-        <div>
-          <p className="text-xl font-bold text-ink">
-            Free consultation slots are limited.
-          </p>
-          <p className="mt-2 leading-7 text-slate-600">
-            Book your call now so you can get clear before spending more time or
-            money on marketing.
-          </p>
-        </div>
+    <section className="bg-white px-5 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl rounded-3xl bg-[linear-gradient(135deg,#224977_0%,#245b96_100%)] px-6 py-12 text-center text-white shadow-soft sm:px-10 lg:py-16">
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-100">
+          Free strategy call
+        </p>
+        <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-normal sm:text-4xl">
+          Ready to get a clear digital marketing plan for your business?
+        </h2>
+        <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-brand-50">
+          If you are not sure what to do next, this call will help you get
+          clarity and direction.
+        </p>
+        <a
+          href="#"
+          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-brand-800 transition hover:-translate-y-0.5 hover:bg-brand-50 focus:outline-none focus:ring-4 focus:ring-white/30"
+        >
+          Book My Free Consultation
+          <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+        </a>
       </div>
     </section>
   );

@@ -1,74 +1,55 @@
-import { CheckCircle2 } from "lucide-react";
+import { Compass, LineChart, ListChecks } from "lucide-react";
 
 const benefits = [
-  "Know what is not working in your marketing",
-  "Know what to post and promote",
-  "Know how to get better leads",
-  "Know where to spend your time and money",
-  "Know the next steps for your business"
-];
-
-const steps = [
   {
-    title: "Step 1",
-    body: "Fill out the short form"
+    title: "Find what is stopping your business growth",
+    body: "We look at where your current marketing is stuck and what is blocking better results.",
+    icon: LineChart
   },
   {
-    title: "Step 2",
-    body: "Join the 1:1 consultation call"
+    title: "Get a personalized marketing direction",
+    body: "You get guidance that fits your business, not random advice copied from the internet.",
+    icon: Compass
   },
   {
-    title: "Step 3",
-    body: "Get a simple plan for your business"
+    title: "Leave the call with an actionable plan",
+    body: "You will know the next steps to improve leads, customers, and sales after the call.",
+    icon: ListChecks
   }
 ];
 
 export default function Benefits() {
   return (
-    <section className="bg-white px-5 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_0.85fr]">
-        <div>
+    <section className="bg-white px-5 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">
-            What you will get
+            Why This Call Matters
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-normal text-ink sm:text-4xl">
-            By the end of the call, you will know what to do next.
+            Get clear before spending more time and money on marketing.
           </h2>
-
-          <div className="mt-8 grid gap-3">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit}
-                className="flex items-start gap-3 rounded-md border border-slate-200 bg-white p-4"
-              >
-                <CheckCircle2
-                  className="mt-0.5 h-5 w-5 shrink-0 text-brand-700"
-                  aria-hidden="true"
-                />
-                <p className="font-medium leading-6 text-slate-700">
-                  {benefit}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <div className="rounded-lg bg-brand-900 p-6 text-white sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">
-            Simple process
-          </p>
-          <div className="mt-7 space-y-5">
-            {steps.map((step) => (
-              <div key={step.title} className="border-l border-brand-300 pl-5">
-                <p className="text-sm font-semibold text-brand-200">
-                  {step.title}
-                </p>
-                <p className="mt-1 text-lg font-semibold leading-7">
-                  {step.body}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {benefits.map((benefit) => {
+            const Icon = benefit.icon;
+
+            return (
+              <article
+                key={benefit.title}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <h3 className="mt-5 text-xl font-bold leading-7 text-ink">
+                  {benefit.title}
+                </h3>
+                <p className="mt-3 leading-7 text-slate-600">{benefit.body}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
