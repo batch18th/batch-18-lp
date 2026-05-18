@@ -15,7 +15,7 @@ export default function Urgency() {
           clarity and direction.
         </p>
         <a
-          href="#"
+          href="#book-call"
           className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-brand-800 transition hover:-translate-y-0.5 hover:bg-brand-50 focus:outline-none focus:ring-4 focus:ring-white/30"
         >
           Book My Free Consultation

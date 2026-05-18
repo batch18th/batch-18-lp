@@ -104,28 +104,48 @@ export default function CTAForm() {
   }
 
   return (
-    <section id="book-call" className="bg-white px-5 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-start">
+    <section
+      id="book-call"
+      className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] px-5 py-20 sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto grid max-w-6xl gap-10 rounded-3xl border border-brand-100 bg-white p-5 shadow-soft sm:p-8 lg:grid-cols-[0.82fr_1fr] lg:items-start lg:p-10">
         <div className="lg:sticky lg:top-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">
+          <p className="inline-flex rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-semibold text-brand-800">
             Book your free call
           </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-normal text-ink sm:text-4xl">
+          <h2 className="mt-5 text-3xl font-bold tracking-normal text-ink sm:text-4xl">
             Tell me about your business
           </h2>
-          <p className="mt-3 text-xl font-semibold text-brand-800">
-            I will use this to prepare for your consultation.
+          <p className="mt-4 text-xl font-semibold leading-8 text-brand-800">
+            I will review your details and prepare better questions for your
+            consultation.
           </p>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            Fill out the form. After that, we will connect and talk about your
-            marketing plan.
+            Fill out the form below. After submission, your details will be sent
+            safely and we will contact you with the next steps.
           </p>
+
+          <div className="mt-8 space-y-4 rounded-2xl bg-slate-50 p-5">
+            {[
+              "Free 1:1 digital marketing consultation",
+              "Clear direction for leads, customers, and sales",
+              "Simple plan you can start implementing"
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle2
+                  className="mt-0.5 h-5 w-5 shrink-0 text-brand-700"
+                  aria-hidden="true"
+                />
+                <p className="font-semibold leading-6 text-slate-700">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <form
           noValidate
           onSubmit={handleSubmit}
-          className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-soft sm:p-8"
+          className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-7"
         >
           {successMessage ? (
             <div
@@ -210,7 +230,7 @@ export default function CTAForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-brand-700 px-6 py-3 text-base font-semibold text-white transition hover:bg-brand-800 focus:outline-none focus:ring-4 focus:ring-brand-200 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-md bg-brand-700 px-6 py-3 text-base font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-800 focus:outline-none focus:ring-4 focus:ring-brand-200 disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-70 sm:w-auto"
             >
               {isSubmitting ? "Booking..." : "Book Free Consultation"}
               <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />

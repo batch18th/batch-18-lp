@@ -39,7 +39,7 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#"
+              href="#book-call"
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-brand-700 px-6 py-3 text-base font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-brand-800 focus:outline-none focus:ring-4 focus:ring-brand-200"
             >
               Book My Free Consultation
