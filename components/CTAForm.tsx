@@ -265,20 +265,70 @@ export default function CTAForm() {
     });
 
     let redirectTimer: number | undefined;
-    const redirectAfterSuccess = () => {
+    let syncStarted = false;
+
+    const collectSubmissionData = () => {
+      const getValue = (selector: string) =>
+        root.querySelector<HTMLInputElement>(selector)?.value.trim() || "";
+
+      return {
+        fullName: getValue('[name="firstName"]'),
+        email: getValue('[name="email"]'),
+        whatsapp: getValue('[name="fields.whatsapp"]'),
+        businessName: getValue('[name="fields.businessName"]'),
+        website: getValue('[name="fields.websiteOrFacebookPageLink"]'),
+        message: getValue('[name="fields."]')
+      };
+    };
+
+    const syncAfterFlodeskSuccess = async () => {
+      if (syncStarted) {
+        return;
+      }
+
       if (
         root.dataset.ffStage === "success" ||
         root.classList.contains("fd-has-success") ||
         Boolean(root.querySelector(".fd-has-success"))
       ) {
-        window.clearTimeout(redirectTimer);
-        redirectTimer = window.setTimeout(() => {
-          window.location.assign("/thanks");
-        }, 1800);
+        syncStarted = true;
+        const submissionData = collectSubmissionData();
+
+        console.log("[flodesk] Successful submission detected", submissionData);
+
+        try {
+          const response = await fetch("/api/consultation", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(submissionData)
+          });
+          const result = await response.json();
+
+          console.log("[flodesk] Backend sync response", {
+            status: response.status,
+            result
+          });
+
+          if (!response.ok) {
+            throw new Error(result.message || "Backend sync failed.");
+          }
+
+          window.clearTimeout(redirectTimer);
+          redirectTimer = window.setTimeout(() => {
+            window.location.assign("/thanks");
+          }, 1800);
+        } catch (error) {
+          syncStarted = false;
+          console.error("[flodesk] Backend sync failed", error);
+        }
       }
     };
 
-    const observer = new MutationObserver(redirectAfterSuccess);
+    const observer = new MutationObserver(() => {
+      void syncAfterFlodeskSuccess();
+    });
     observer.observe(root, {
       attributes: true,
       attributeFilter: ["data-ff-stage", "class"],
@@ -286,7 +336,7 @@ export default function CTAForm() {
       subtree: true
     });
 
-    redirectAfterSuccess();
+    void syncAfterFlodeskSuccess();
 
     return () => {
       window.clearTimeout(redirectTimer);
