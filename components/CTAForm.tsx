@@ -85,29 +85,52 @@ const flodeskMarkup = `
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__title {
     color: #102033;
     font-family: inherit;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.08;
-    text-align: left;
+    margin-bottom: 10px;
+    text-align: center;
   }
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__subtitle {
     color: #475569;
     font-size: 16px;
     line-height: 1.7;
-    text-align: left;
+    margin-bottom: 26px;
+    text-align: center;
   }
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__fields {
     display: grid;
     gap: 16px;
     margin-bottom: 22px;
   }
+  @media (min-width: 768px) {
+    [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__fields {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__field {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
     margin: 0;
     font-family: inherit;
+  }
+  @media (min-width: 768px) {
+    [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__field:nth-last-of-type(1),
+    [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__field:nth-last-of-type(2) {
+      grid-column: span 2;
+    }
+  }
+  [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .fd-form-control::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+  }
+  [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .fd-form-control:not(:placeholder-shown)+.fd-form-label {
+    opacity: 1;
   }
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__control {
     min-height: 52px;
     border: 1px solid #dbe4ef;
-    border-radius: 0.5rem;
+    border-radius: 0.875rem;
     background: #ffffff;
     color: #102033;
     font-family: inherit;
@@ -118,19 +141,29 @@ const flodeskMarkup = `
     border-color: #245b96;
     box-shadow: 0 0 0 4px rgba(36, 91, 150, 0.12);
   }
+  [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__field:last-of-type .ff-6a09eaabc571dfdc0b696534__control {
+    min-height: 88px;
+  }
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__label {
-    color: #64748b;
+    position: static;
+    border: 0;
+    padding: 0;
+    color: #102033;
     font-family: inherit;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+    opacity: 1;
   }
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__button {
     min-height: 52px;
     border: 1px solid #245b96;
-    border-radius: 0.5rem;
+    border-radius: 999px;
     background: #245b96;
     font-family: inherit;
     font-size: 16px;
     font-weight: 700;
+    box-shadow: 0 16px 30px rgba(36, 91, 150, 0.22);
     transition: transform 180ms ease, background 180ms ease;
   }
   [data-ff-el="root"].ff-6a09eaabc571dfdc0b696534 .ff-6a09eaabc571dfdc0b696534__button:hover {
@@ -158,12 +191,12 @@ const flodeskMarkup = `
       <form class="ff-6a09eaabc571dfdc0b696534__form" action="https://form.flodesk.com/forms/6a09eaabc571dfdc0b696534/submit" method="post" data-ff-el="form">
         <div class="ff-6a09eaabc571dfdc0b696534__title">
           <div style="word-break:break-word">
-            <div data-paragraph="true">Free 1:1 Consultation Call</div>
+            <div data-paragraph="true">Book Your Free Consultation</div>
           </div>
         </div>
         <div class="ff-6a09eaabc571dfdc0b696534__subtitle">
           <div style="word-break:break-word">
-            <div data-paragraph="true">Book a Free Digital Marketing consultation call with me and get a customized digital marketing &nbsp;strategy for your business.</div>
+            <div data-paragraph="true">Fill in your details and I will contact you with the next step for your free 1:1 digital marketing consultation.</div>
           </div>
         </div>
         <div class="ff-6a09eaabc571dfdc0b696534__content fd-form-content" data-ff-el="content">
@@ -171,33 +204,33 @@ const flodeskMarkup = `
             <!--tpl {% block fields %} tpl-->
 
             <div class="ff-6a09eaabc571dfdc0b696534__field fd-form-group">
-              <input id="ff-6a09eaabc571dfdc0b696534-firstName" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="firstName" placeholder="First name" data-ff-tab="firstName::email" required />
-              <label for="ff-6a09eaabc571dfdc0b696534-firstName" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>First name</div></div></label>
+              <input id="ff-6a09eaabc571dfdc0b696534-firstName" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="firstName" placeholder="Enter your full name" data-ff-tab="firstName::email" required />
+              <label for="ff-6a09eaabc571dfdc0b696534-firstName" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Full Name *</div></div></label>
             </div>
 
             <div class="ff-6a09eaabc571dfdc0b696534__field fd-form-group">
-              <input id="ff-6a09eaabc571dfdc0b696534-email" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="email" placeholder="Email address" data-ff-tab="email:firstName:fields.whatsapp" required />
-              <label for="ff-6a09eaabc571dfdc0b696534-email" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Email address</div></div></label>
+              <input id="ff-6a09eaabc571dfdc0b696534-email" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="email" placeholder="Enter your active email" data-ff-tab="email:firstName:fields.whatsapp" required />
+              <label for="ff-6a09eaabc571dfdc0b696534-email" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Active Email *</div></div></label>
             </div>
 
             <div class="ff-6a09eaabc571dfdc0b696534__field fd-form-group">
-              <input id="ff-6a09eaabc571dfdc0b696534-IaGkVaFuj0" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields.whatsapp" placeholder="WhatsApp Number" data-ff-tab="fields.whatsapp:email:fields.businessName" required />
-              <label for="ff-6a09eaabc571dfdc0b696534-IaGkVaFuj0" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>WhatsApp Number</div></div></label>
+              <input id="ff-6a09eaabc571dfdc0b696534-IaGkVaFuj0" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields.whatsapp" placeholder="Enter your WhatsApp number" data-ff-tab="fields.whatsapp:email:fields.businessName" required />
+              <label for="ff-6a09eaabc571dfdc0b696534-IaGkVaFuj0" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>WhatsApp Number *</div></div></label>
             </div>
 
             <div class="ff-6a09eaabc571dfdc0b696534__field fd-form-group">
-              <input id="ff-6a09eaabc571dfdc0b696534-U2CVEt4L8q" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields.businessName" placeholder="Business Name" data-ff-tab="fields.businessName:fields.whatsapp:fields.websiteOrFacebookPageLink" required />
-              <label for="ff-6a09eaabc571dfdc0b696534-U2CVEt4L8q" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Business Name</div></div></label>
+              <input id="ff-6a09eaabc571dfdc0b696534-U2CVEt4L8q" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields.businessName" placeholder="Enter your business name" data-ff-tab="fields.businessName:fields.whatsapp:fields.websiteOrFacebookPageLink" required />
+              <label for="ff-6a09eaabc571dfdc0b696534-U2CVEt4L8q" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Business Name *</div></div></label>
             </div>
 
             <div class="ff-6a09eaabc571dfdc0b696534__field fd-form-group">
-              <input id="ff-6a09eaabc571dfdc0b696534-PQT5xHpiUA" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields.websiteOrFacebookPageLink" placeholder="Website or Facebook Page Link" data-ff-tab="fields.websiteOrFacebookPageLink:fields.businessName:fields." required />
-              <label for="ff-6a09eaabc571dfdc0b696534-PQT5xHpiUA" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Website or Facebook Page Link</div></div></label>
+              <input id="ff-6a09eaabc571dfdc0b696534-PQT5xHpiUA" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields.websiteOrFacebookPageLink" placeholder="Paste your website or Facebook page link" data-ff-tab="fields.websiteOrFacebookPageLink:fields.businessName:fields." required />
+              <label for="ff-6a09eaabc571dfdc0b696534-PQT5xHpiUA" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Website / Facebook URL *</div></div></label>
             </div>
 
             <div class="ff-6a09eaabc571dfdc0b696534__field fd-form-group">
-              <input id="ff-6a09eaabc571dfdc0b696534-2cSojY0roQ" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields." placeholder="" data-ff-tab="fields.:fields.websiteOrFacebookPageLink:submit" />
-              <label for="ff-6a09eaabc571dfdc0b696534-2cSojY0roQ" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div></div></div></label>
+              <input id="ff-6a09eaabc571dfdc0b696534-2cSojY0roQ" class="ff-6a09eaabc571dfdc0b696534__control fd-form-control" type="text" maxlength="255" name="fields." placeholder="Tell me what you need help with" data-ff-tab="fields.:fields.websiteOrFacebookPageLink:submit" />
+              <label for="ff-6a09eaabc571dfdc0b696534-2cSojY0roQ" class="ff-6a09eaabc571dfdc0b696534__label fd-form-label"><div><div>Anything you want to say</div></div></label>
             </div>
 
             <input type="text" maxlength="255" name="confirm_email_address" style="display: none" />
@@ -206,7 +239,7 @@ const flodeskMarkup = `
 
           <div class="ff-6a09eaabc571dfdc0b696534__footer" data-ff-el="footer">
             <button type="submit" class="ff-6a09eaabc571dfdc0b696534__button fd-btn" data-ff-el="submit" data-ff-tab="submit">
-              <div><span data-draw-element="editable">Subscribe</span></div>
+              <div><span data-draw-element="editable">Submit & Book My Free Call</span></div>
             </button>
           </div>
         </div>
