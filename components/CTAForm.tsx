@@ -149,6 +149,13 @@ export default function CTAForm() {
 
         console.log("[flodesk] Successful submission detected", submissionData);
 
+        const redirectToThanks = () => {
+          window.clearTimeout(redirectTimer);
+          redirectTimer = window.setTimeout(() => {
+            window.location.assign("/thanks");
+          }, 1800);
+        };
+
         try {
           const response = await fetch("/api/consultation", {
             method: "POST",
@@ -168,13 +175,10 @@ export default function CTAForm() {
             throw new Error(result.message || "Backend sync failed.");
           }
 
-          window.clearTimeout(redirectTimer);
-          redirectTimer = window.setTimeout(() => {
-            window.location.assign("/thanks");
-          }, 1800);
+          redirectToThanks();
         } catch (error) {
-          syncStarted = false;
           console.error("[flodesk] Backend sync failed", error);
+          redirectToThanks();
         }
       }
     };
@@ -215,11 +219,11 @@ export default function CTAForm() {
             </p>
 
             <h2 className="mt-7 text-3xl font-bold leading-tight tracking-normal sm:text-4xl">
-              Tell me about your business and I'll guide you clearly.
+              Tell me about your business and I&apos;ll guide you clearly.
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-blue-50">
-              Fill the form and I'll contact you with the next step for your
+              Fill the form and I&apos;ll contact you with the next step for your
               free digital marketing consultation.
             </p>
 
