@@ -1,66 +1,49 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, Mail, MessageCircle } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Thank You",
+  title: "Thank You | SOM Digital",
   description:
-    "Your consultation request has been received. Please check your email or WhatsApp for the next steps."
+    "Thank you. Your free 1:1 consultation request has been received.",
+  openGraph: {
+    title: "Thank You | SOM Digital",
+    description:
+      "Your free 1:1 consultation request has been received.",
+    url: "https://landing.sombahadurtamang.com/thank-you",
+    type: "website"
+  }
 };
 
 export default function ThankYouPage() {
   return (
-    <main className="min-h-screen bg-white px-5 py-8 sm:px-6 lg:px-8">
-      <div className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-3xl flex-col justify-center">
-        <Image
-          src="/logo.png"
-          alt="SOM Digital"
-          width={360}
-          height={160}
-          priority
-          className="mb-10 h-auto w-48 sm:w-64"
-        />
-
-        <div className="rounded-lg border border-brand-100 bg-slate-50 p-6 shadow-soft sm:p-10">
-          <div className="flex h-14 w-14 items-center justify-center rounded-md bg-brand-50 text-brand-700">
-            <CheckCircle2 className="h-8 w-8" aria-hidden="true" />
+    <main className="min-h-screen bg-[linear-gradient(180deg,#ffffff_0%,#f6f9fd_100%)] px-5 py-10 text-ink sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-3xl items-center justify-center">
+        <section className="w-full rounded-[2rem] border border-brand-100 bg-white p-7 text-center shadow-soft sm:p-10 lg:p-14">
+          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 ring-8 ring-emerald-100">
+            <CheckCircle2 className="h-11 w-11" aria-hidden="true" />
           </div>
-          <h1 className="mt-7 text-4xl font-bold tracking-normal text-ink sm:text-5xl">
-            Thank you. Your request is received.
-          </h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
-            I will check your details and contact you by email or WhatsApp with
-            the next step.
+
+          <p className="mt-8 text-sm font-bold uppercase tracking-[0.18em] text-brand-700">
+            Request Received
           </p>
 
-          <div className="mt-8 grid gap-6 border-y border-slate-200 py-6 sm:grid-cols-2">
-            <div>
-              <Mail className="h-5 w-5 text-brand-700" aria-hidden="true" />
-              <p className="mt-3 font-semibold text-ink">Check your email</p>
-              <p className="mt-1 text-sm leading-6 text-slate-600">
-                Look for the call details and next step.
-              </p>
-            </div>
-            <div>
-              <MessageCircle
-                className="h-5 w-5 text-brand-700"
-                aria-hidden="true"
-              />
-              <p className="mt-3 font-semibold text-ink">Watch WhatsApp</p>
-              <p className="mt-1 text-sm leading-6 text-slate-600">
-                I may message you to confirm the call.
-              </p>
-            </div>
-          </div>
+          <h1 className="mx-auto mt-4 max-w-2xl text-4xl font-bold leading-tight tracking-normal text-ink sm:text-5xl">
+            Thank You! Your Free 1:1 Consultation Request Has Been Received.
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-slate-600">
+            I will review your business details and contact you shortly through
+            email or phone.
+          </p>
 
           <Link
             href="/"
-            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md border border-brand-700 px-6 py-3 text-base font-semibold text-brand-800 transition hover:bg-brand-50 focus:outline-none focus:ring-4 focus:ring-brand-100"
+            className="mt-9 inline-flex min-h-12 items-center justify-center rounded-full bg-brand-700 px-7 py-3 text-base font-bold text-white shadow-[0_16px_34px_rgba(36,91,150,0.22)] transition hover:-translate-y-0.5 hover:bg-brand-800 focus:outline-none focus:ring-4 focus:ring-brand-100"
           >
-            Back to Landing Page
+            Back to Home
           </Link>
-        </div>
+        </section>
       </div>
     </main>
   );
