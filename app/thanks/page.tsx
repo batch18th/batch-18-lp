@@ -54,6 +54,19 @@ export default function ThanksPage() {
             phone number with the next steps.
           </p>
 
+          <div className="mt-9 overflow-hidden rounded-3xl border border-slate-100 bg-slate-950 shadow-[0_18px_46px_rgba(31,62,100,0.16)]">
+            <div className="aspect-video">
+              <iframe
+                src="https://player.vimeo.com/video/1195289270?badge=0&autopause=0&player_id=0&app_id=58479"
+                title="Digital marketing consultation next steps"
+                className="h-full w-full"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
           <div className="mt-9 rounded-3xl border border-slate-100 bg-[#fcfdff] p-5 text-left sm:p-7">
             <h2 className="text-center text-2xl font-bold tracking-normal text-ink">
               What happens next?
