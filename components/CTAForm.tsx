@@ -12,7 +12,7 @@ declare global {
 
 const formId = "6a09eaabc571dfdc0b696534";
 const rootSelector = ".ff-6a09eaabc571dfdc0b696534";
-const thankYouPath = "/thanks";
+const thankYouUrl = "https://landing.sombahadurtamang.com/thanks";
 const flodeskConfig =
   "eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJyZWRpcmVjdCIsIm1lc3NhZ2UiOiIiLCJyZWRpcmVjdFVybCI6Imh0dHBzOi8vbGFuZGluZy5zb21iYWhhZHVydGFtYW5nLmNvbS90aGFua3MifSwiY29pIjpmYWxzZSwic2hvd0ZvclJldHVyblZpc2l0b3JzIjp0cnVlLCJub3RpZmljYXRpb24iOmZhbHNlLCJnZHByIjp7ImFjY2VwdHNNYXJrZXRpbmciOmZhbHNlLCJwcml2YWN5UG9saWN5Ijp7ImVuYWJsZWQiOmZhbHNlLCJtYW5kYXRvcnkiOmZhbHNlfX0sInRyYWNraW5nQ29uZmlnIjp7Im1ldGFQaXhlbElkIjoiIiwiY29va2llQmFubmVyRW5hYmxlZCI6ZmFsc2UsImdvb2dsZUFuYWx5dGljc0lkIjoiIn19";
 
@@ -153,7 +153,7 @@ export default function CTAForm() {
         const redirectToThanks = () => {
           window.clearTimeout(redirectTimer);
           redirectTimer = window.setTimeout(() => {
-            window.location.assign(thankYouPath);
+            window.location.assign(thankYouUrl);
           }, 1800);
         };
 
