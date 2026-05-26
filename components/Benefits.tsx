@@ -23,7 +23,7 @@ export default function Benefits() {
     <section className="bg-white px-5 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-600">
             Why This Call Matters
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-normal text-ink sm:text-4xl">
@@ -38,9 +38,9 @@ export default function Benefits() {
             return (
               <article
                 key={benefit.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+              className="rounded-3xl border border-brand-100 bg-white p-6 shadow-[0_14px_38px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:shadow-soft"
+            >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
                 <h3 className="mt-5 text-xl font-bold leading-7 text-ink">

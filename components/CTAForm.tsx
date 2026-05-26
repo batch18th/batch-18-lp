@@ -53,7 +53,7 @@ function TextField({
       </label>
       <input
         id={id}
-        className="h-[52px] w-full rounded-xl border border-slate-200 bg-white px-4 text-base text-ink shadow-[0_1px_0_rgba(15,23,42,0.03)] outline-none transition placeholder:text-slate-400 focus:border-brand-600 focus:ring-4 focus:ring-brand-100"
+        className="h-[52px] w-full rounded-xl border border-brand-100 bg-white px-4 text-base text-ink shadow-[0_1px_0_rgba(15,23,42,0.03)] outline-none transition placeholder:text-slate-400 focus:border-brand-600 focus:ring-4 focus:ring-brand-100"
         type={type}
         maxLength={255}
         name={name}
@@ -216,11 +216,11 @@ export default function CTAForm() {
   return (
     <section
       id="book-call"
-      className="bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fc_100%)] px-5 py-20 sm:px-6 lg:px-8"
+      className="bg-brand-50 px-5 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="grid overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-soft lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative bg-[linear-gradient(145deg,#132338_0%,#233f62_58%,#2b547f_100%)] p-7 text-white sm:p-10 lg:p-12">
+        <div className="grid overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.14)] lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="relative bg-[linear-gradient(145deg,#0B1F3A_0%,#0F2F78_58%,#1D4ED8_100%)] p-7 text-white sm:p-10 lg:p-12">
             <div className="absolute inset-x-8 top-0 h-px bg-white/30" />
             <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-sm font-bold">
               <Sparkles className="h-4 w-4" aria-hidden="true" />
@@ -288,13 +288,13 @@ export default function CTAForm() {
                 data-ff-el="form"
               >
                 <div className="text-center sm:text-left">
-                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-700">
+                  <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-600">
                     Book the call
                   </p>
                   <h3 className="mt-3 text-2xl font-bold tracking-normal text-ink sm:text-3xl">
                     Book Your Free Consultation
                   </h3>
-                  <p className="mt-3 text-base leading-7 text-slate-600">
+                  <p className="mt-3 text-base font-medium leading-7 text-slate-600">
                     Fill in the details below and take the first step toward
                     better marketing.
                   </p>
@@ -369,7 +369,7 @@ export default function CTAForm() {
                 <div data-ff-el="footer">
                   <button
                     type="submit"
-                    className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-brand-700 px-6 py-4 text-base font-bold text-white shadow-[0_18px_35px_rgba(36,91,150,0.24)] transition hover:-translate-y-0.5 hover:bg-brand-800 focus:outline-none focus:ring-4 focus:ring-brand-100"
+                    className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-4 text-base font-bold text-white shadow-[0_18px_35px_rgba(29,78,216,0.24)] transition hover:-translate-y-0.5 hover:bg-brand-700 focus:outline-none focus:ring-4 focus:ring-brand-100"
                     data-ff-el="submit"
                     data-ff-tab="submit"
                   >

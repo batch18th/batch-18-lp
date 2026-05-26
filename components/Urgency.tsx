@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 export default function Urgency() {
   return (
     <section className="bg-white px-5 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl rounded-3xl bg-[linear-gradient(135deg,#132338_0%,#233f62_58%,#2b547f_100%)] px-6 py-12 text-center text-white shadow-soft sm:px-10 lg:py-16">
+      <div className="mx-auto max-w-5xl rounded-3xl bg-[linear-gradient(135deg,#0B1F3A_0%,#0F2F78_56%,#1D4ED8_100%)] px-6 py-12 text-center text-white shadow-soft sm:px-10 lg:py-16">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-100">
           Free strategy call
         </p>
@@ -16,7 +16,7 @@ export default function Urgency() {
         </p>
         <a
           href="#book-call"
-          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-brand-800 transition hover:-translate-y-0.5 hover:bg-brand-50 focus:outline-none focus:ring-4 focus:ring-white/30"
+          className="mt-8 inline-flex min-h-12 items-center justify-center rounded-xl bg-white px-6 py-3 text-base font-bold text-brand-800 transition hover:-translate-y-0.5 hover:bg-brand-50 focus:outline-none focus:ring-4 focus:ring-white/30"
         >
           Book My Free Consultation
           <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
