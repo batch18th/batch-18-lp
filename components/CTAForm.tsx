@@ -216,11 +216,11 @@ export default function CTAForm() {
   return (
     <section
       id="book-call"
-      className="bg-[linear-gradient(180deg,#ffffff_0%,#f6f9fd_100%)] px-5 py-20 sm:px-6 lg:px-8"
+      className="bg-[linear-gradient(180deg,#ffffff_0%,#f7f9fc_100%)] px-5 py-20 sm:px-6 lg:px-8"
     >
       <div className="mx-auto max-w-6xl">
         <div className="grid overflow-hidden rounded-[2rem] border border-brand-100 bg-white shadow-soft lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="relative bg-[linear-gradient(145deg,#12345a_0%,#245b96_56%,#4c8dd8_100%)] p-7 text-white sm:p-10 lg:p-12">
+          <div className="relative bg-[linear-gradient(145deg,#132338_0%,#233f62_58%,#2b547f_100%)] p-7 text-white sm:p-10 lg:p-12">
             <div className="absolute inset-x-8 top-0 h-px bg-white/30" />
             <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-sm font-bold">
               <Sparkles className="h-4 w-4" aria-hidden="true" />

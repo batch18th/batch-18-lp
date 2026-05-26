@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 export default function Urgency() {
   return (
     <section className="bg-white px-5 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl rounded-3xl bg-[linear-gradient(135deg,#224977_0%,#245b96_100%)] px-6 py-12 text-center text-white shadow-soft sm:px-10 lg:py-16">
+      <div className="mx-auto max-w-5xl rounded-3xl bg-[linear-gradient(135deg,#132338_0%,#233f62_58%,#2b547f_100%)] px-6 py-12 text-center text-white shadow-soft sm:px-10 lg:py-16">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-100">
           Free strategy call
         </p>

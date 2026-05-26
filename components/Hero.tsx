@@ -3,7 +3,7 @@ import { ArrowRight, BarChart3, CheckCircle2, MessageSquareText, TrendingUp } fr
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,#eef6ff,transparent_34%),linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] px-5 pb-20 pt-6 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,#e8eef5,transparent_34%),linear-gradient(180deg,#ffffff_0%,#f7f9fc_100%)] px-5 pb-20 pt-6 sm:px-6 lg:px-8">
       <div className="absolute inset-x-0 top-0 h-1 bg-brand-700" />
 
       <header className="mx-auto flex max-w-6xl justify-center py-4">
@@ -55,7 +55,7 @@ export default function Hero() {
         </div>
 
         <div className="relative">
-          <div className="absolute -inset-4 rounded-[2rem] bg-brand-100/60 blur-3xl" />
+          <div className="absolute -inset-4 rounded-[2rem] bg-brand-100/70 blur-3xl" />
           <div className="relative rounded-2xl border border-brand-100 bg-white p-5 shadow-soft sm:p-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-5">
               <div>
@@ -76,7 +76,7 @@ export default function Hero() {
               <Metric label="Follow-up Clarity" value="+68%" />
             </div>
 
-            <div className="mt-6 rounded-xl bg-slate-50 p-5">
+            <div className="mt-6 rounded-xl bg-[#f7f9fc] p-5">
               <div className="flex items-center justify-between">
                 <p className="font-semibold text-ink">Consultation Focus</p>
                 <BarChart3 className="h-5 w-5 text-brand-700" aria-hidden="true" />

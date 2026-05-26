@@ -15,7 +15,7 @@ const audience = [
 
 export default function Problem() {
   return (
-    <section className="bg-slate-50 px-5 py-20 sm:px-6 lg:px-8">
+    <section className="bg-[#f7f9fc] px-5 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
         <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-700">
@@ -37,7 +37,7 @@ export default function Problem() {
           </div>
         </article>
 
-        <article className="rounded-2xl border border-brand-100 bg-[linear-gradient(135deg,#ffffff_0%,#eef6ff_100%)] p-6 shadow-sm sm:p-8">
+        <article className="rounded-2xl border border-brand-100 bg-[linear-gradient(135deg,#ffffff_0%,#f1f5f9_100%)] p-6 shadow-sm sm:p-8">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-700 text-white">
             <UsersRound className="h-6 w-6" aria-hidden="true" />
           </div>
