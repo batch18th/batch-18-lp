@@ -79,6 +79,15 @@ export default function ThanksPage() {
             </div>
           </div>
 
+          <a
+            href="https://wa.me/9779827155905"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex min-h-12 items-center justify-center rounded-xl bg-[#25D366] px-7 py-3 text-base font-bold text-white shadow-[0_16px_34px_rgba(37,211,102,0.24)] transition hover:-translate-y-0.5 hover:bg-[#1ebe5d] focus:outline-none focus:ring-4 focus:ring-emerald-100"
+          >
+            Chat on WhatsApp
+          </a>
+
           <div className="mx-auto mt-7 max-w-4xl rounded-3xl border border-brand-100 bg-slate-50 p-4 text-left sm:p-6">
             <h2 className="text-center text-2xl font-bold tracking-normal text-ink">
               What happens next?
