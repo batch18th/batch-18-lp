@@ -12,6 +12,7 @@ declare global {
 
 const formId = "6a09eaabc571dfdc0b696534";
 const rootSelector = ".ff-6a09eaabc571dfdc0b696534";
+const thankYouPath = "/thank-you";
 const flodeskConfig =
   "eyJ0cmlnZ2VyIjp7Im1vZGUiOiJpbW1lZGlhdGVseSIsInZhbHVlIjowfSwib25TdWNjZXNzIjp7Im1vZGUiOiJtZXNzYWdlIiwibWVzc2FnZSI6IiIsInJlZGlyZWN0VXJsIjoiIn0sImNvaSI6ZmFsc2UsInNob3dGb3JSZXR1cm5WaXNpdG9ycyI6dHJ1ZSwibm90aWZpY2F0aW9uIjpmYWxzZSwiZ2RwciI6eyJhY2NlcHRzTWFya2V0aW5nIjpmYWxzZSwicHJpdmFjeVBvbGljeSI6eyJlbmFibGVkIjpmYWxzZSwibWFuZGF0b3J5IjpmYWxzZX19LCJ0cmFja2luZ0NvbmZpZyI6eyJtZXRhUGl4ZWxJZCI6IiIsImNvb2tpZUJhbm5lckVuYWJsZWQiOmZhbHNlLCJnb29nbGVBbmFseXRpY3NJZCI6IiJ9fQ==";
 
@@ -152,9 +153,14 @@ export default function CTAForm() {
         const redirectToThanks = () => {
           window.clearTimeout(redirectTimer);
           redirectTimer = window.setTimeout(() => {
-            window.location.assign("/thanks");
+            window.location.assign(thankYouPath);
           }, 1800);
         };
+
+        const controller = new AbortController();
+        const syncTimeout = window.setTimeout(() => {
+          controller.abort();
+        }, 5000);
 
         try {
           const response = await fetch("/api/consultation", {
@@ -162,7 +168,8 @@ export default function CTAForm() {
             headers: {
               "Content-Type": "application/json"
             },
-            body: JSON.stringify(submissionData)
+            body: JSON.stringify(submissionData),
+            signal: controller.signal
           });
           const result = await response.json();
 
@@ -179,6 +186,8 @@ export default function CTAForm() {
         } catch (error) {
           console.error("[flodesk] Backend sync failed", error);
           redirectToThanks();
+        } finally {
+          window.clearTimeout(syncTimeout);
         }
       }
     };
