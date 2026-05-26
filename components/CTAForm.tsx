@@ -47,13 +47,18 @@ function TextField({
   className = ""
 }: FieldProps) {
   return (
-    <div className={`space-y-2 ${className}`}>
-      <label htmlFor={id} className="block text-sm font-bold text-ink">
+    <div
+      className={`ff-6a09eaabc571dfdc0b696534__field fd-form-group space-y-2 ${className}`}
+    >
+      <label
+        htmlFor={id}
+        className="ff-6a09eaabc571dfdc0b696534__label fd-form-label block text-sm font-bold text-ink"
+      >
         {label}
       </label>
       <input
         id={id}
-        className="h-[52px] w-full rounded-xl border border-brand-100 bg-white px-4 text-base text-ink shadow-[0_1px_0_rgba(15,23,42,0.03)] outline-none transition placeholder:text-slate-400 focus:border-brand-600 focus:ring-4 focus:ring-brand-100"
+        className="ff-6a09eaabc571dfdc0b696534__control fd-form-control h-[52px] w-full rounded-xl border border-brand-100 bg-white px-4 text-base text-ink shadow-[0_1px_0_rgba(15,23,42,0.03)] outline-none transition placeholder:text-slate-400 focus:border-brand-600 focus:ring-4 focus:ring-brand-100"
         type={type}
         maxLength={255}
         name={name}
@@ -282,7 +287,7 @@ export default function CTAForm() {
               />
 
               <form
-                className="space-y-7"
+                className="ff-6a09eaabc571dfdc0b696534__form space-y-7"
                 action={`https://form.flodesk.com/forms/${formId}/submit`}
                 method="post"
                 data-ff-el="form"
@@ -300,7 +305,14 @@ export default function CTAForm() {
                   </p>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2" data-ff-el="fields">
+                <div
+                  className="ff-6a09eaabc571dfdc0b696534__content fd-form-content"
+                  data-ff-el="content"
+                >
+                <div
+                  className="ff-6a09eaabc571dfdc0b696534__fields grid gap-5 sm:grid-cols-2"
+                  data-ff-el="fields"
+                >
                   <TextField
                     id={`${formId}-firstName`}
                     label="Full Name *"
@@ -339,16 +351,16 @@ export default function CTAForm() {
                     className="sm:col-span-2"
                   />
 
-                  <div className="space-y-2 sm:col-span-2">
+                  <div className="ff-6a09eaabc571dfdc0b696534__field fd-form-group space-y-2 sm:col-span-2">
                     <label
                       htmlFor={`${formId}-message`}
-                      className="block text-sm font-bold text-ink"
+                      className="ff-6a09eaabc571dfdc0b696534__label fd-form-label block text-sm font-bold text-ink"
                     >
                       Anything you want to say
                     </label>
                     <textarea
                       id={`${formId}-message`}
-                      className="min-h-28 w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-ink shadow-[0_1px_0_rgba(15,23,42,0.03)] outline-none transition placeholder:text-slate-400 focus:border-brand-600 focus:ring-4 focus:ring-brand-100"
+                      className="ff-6a09eaabc571dfdc0b696534__control fd-form-control min-h-28 w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-ink shadow-[0_1px_0_rgba(15,23,42,0.03)] outline-none transition placeholder:text-slate-400 focus:border-brand-600 focus:ring-4 focus:ring-brand-100"
                       maxLength={255}
                       name="fields."
                       placeholder="Tell me what you need help with"
@@ -369,7 +381,7 @@ export default function CTAForm() {
                 <div data-ff-el="footer">
                   <button
                     type="submit"
-                    className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-4 text-base font-bold text-white shadow-[0_18px_35px_rgba(29,78,216,0.24)] transition hover:-translate-y-0.5 hover:bg-brand-700 focus:outline-none focus:ring-4 focus:ring-brand-100"
+                    className="ff-6a09eaabc571dfdc0b696534__button fd-btn inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-4 text-base font-bold text-white shadow-[0_18px_35px_rgba(29,78,216,0.24)] transition hover:-translate-y-0.5 hover:bg-brand-700 focus:outline-none focus:ring-4 focus:ring-brand-100"
                     data-ff-el="submit"
                     data-ff-tab="submit"
                   >
@@ -380,9 +392,10 @@ export default function CTAForm() {
                     We respect your privacy. No spam.
                   </p>
                 </div>
+                </div>
 
                 <div
-                  className="hidden rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-bold text-emerald-800 data-[ff-stage=success]:block"
+                  className="ff-6a09eaabc571dfdc0b696534__success fd-form-success hidden rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm font-bold text-emerald-800 data-[ff-stage=success]:block"
                   data-ff-el="success"
                 >
                   Thank you! Your form has been submitted successfully. We will
