@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import VimeoThankYouPlayer from "@/components/VimeoThankYouPlayer";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, MailCheck, MessageCircle, PhoneCall, Route } from "lucide-react";
@@ -66,21 +67,10 @@ export default function ThanksPage() {
             email or WhatsApp number with the next steps.
           </p>
 
-          <div className="mx-auto mt-7 max-w-4xl overflow-hidden rounded-2xl border-4 border-white bg-slate-950 shadow-[0_18px_46px_rgba(15,23,42,0.18)] ring-1 ring-brand-100 sm:rounded-3xl">
-            <div className="aspect-video w-full">
-              <iframe
-                src="https://player.vimeo.com/video/1195289270?badge=0&autopause=0&player_id=0&app_id=58479"
-                title="Digital marketing consultation thank you video"
-                className="h-full w-full"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
-          </div>
+          <VimeoThankYouPlayer />
 
           <a
-            href="https://wa.me/9779827155905"
+            href="https://wa.me/message/P7DIMTI5CDEHH1"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex min-h-12 items-center justify-center rounded-xl bg-[#25D366] px-7 py-3 text-base font-bold text-white shadow-[0_16px_34px_rgba(37,211,102,0.24)] transition hover:-translate-y-0.5 hover:bg-[#1ebe5d] focus:outline-none focus:ring-4 focus:ring-emerald-100"
